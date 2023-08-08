@@ -8,6 +8,11 @@ layout: layouts/base.njk
 </div>
 
 <div id="maincontent" class="max-w-[30rem] mx-auto">
+  <div class="bg-green-300 text-green-800 p-10 rounded-xl mb-20">
+      <h1 class="font-medium text-3xl text-center mb-2 text-green-800">Message Sent!</h1>
+      <p class="text-center">Thank you for your message. We will get back to you ASAP.</p>
+  </div>
+
   <h4 class="font-medium text-md text-center mb-2">Find us on Social Media</h4>
   <div class="flex justify-center gap-3 text-xl mb-20">
       <a href="mailto:tinydatatales@gmail.com"><span class="iconify text-[#f2a60c]" data-icon="mdi-email"></span></a>
@@ -16,9 +21,6 @@ layout: layouts/base.njk
       <a href="https://github.com/tinydatatales"><span class="iconify text-[#010409]" data-icon="mdi-github"></span></a>
   </div>
 
-    <div class="bg-green-300 text-green-800 p-10 rounded-xl mb-20">
-        <h1 class="font-medium text-3xl text-center mb-2 text-green-800">Message Sent!</h1>
-        <p class="text-center">Thank you for your message. We will get back to you ASAP.</p>
-    </div>
+    
 
 </div>
