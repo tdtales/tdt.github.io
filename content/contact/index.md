@@ -20,7 +20,7 @@ eleventyNavigation:
   </div>
 
   <h4 class="font-medium text-md text-center mb-2">Send us a message</h4>
-  <form name="Contact Form" method="POST" action="/contact/success" data-netlify="true" onSubmit="submit" data-netlify-honeypot="bot-field">
+  <form name="Contact Form" method="POST" action="/contact/success" netlify data-netlify-honeypot="bot-field">
     <input name="bot-field" hidden>
     <div class="mb-6">
       <label for="name" class="block text-sm font-medium mb-2">Name <span class="text-red-500">*</span></label>
