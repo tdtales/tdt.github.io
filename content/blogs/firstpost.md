@@ -4,6 +4,7 @@ description: This is a post on My Blog about agile frameworks.
 date: 2018-05-01
 tags:
   - another tag
+featuredImage: https://s3.ap-south-1.amazonaws.com/s3.studytonight.com/tutorials/uploads/pictures/1625621721-101156.png
 ---
 Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
 

@@ -1,9 +1,32 @@
 {%- css %}.postlist { counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }} }{% endcss %}
-<ol reversed class="postlist">
+<div reversed class="postlist grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-8">
 {% for post in postslist | reverse %}
-	<li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
-		<a href="{{ post.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
-		<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLLL yyyy") }}</time>
-	</li>
+  <div class="group rounded-xl overflow-hidden flex items-center gap-2 md:flex-col md:items-start">
+    <a href="{{ post.url }}" class="block flex-shrink-0 overflow-hidden rounded-r-xl h-full w-32 md:w-full md:h-60">
+      <img class="w-full h-full object-cover group-hover:scale-110 duration-300 ease-in-out" src="{{ post.data.featuredImage }}" alt="">
+    </a>
+    <div class="p-2 md:p-4">
+      <h3 class="font-bold text w-full ">
+		<a href="{{ post.url }}" class="">
+			{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
+		</a>
+	  </h3>
+      <div class="text-sm font">
+        <span><time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("dd LLL yyyy") }}</time></span> 
+		    &middot;
+        <span>{% if post.data.author %}{{ post.data.author }}{% else %} TDT Team {% endif %}</span>
+      </div>
+      <div class="text-xs font-medium mt-4 flex flex-wrap gap-2">
+        {% for tag in post.data.tags %}
+          <a href="/tags/{{ tag | slugify }}" class="px-2 bg-red-200 text-red-900 rounded pb-1 italic">{{ tag }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+	{# <li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
+		<a href="{{ post.url }}" class="postlist-link"></a>
+		
+	</li> #}
 {% endfor %}
-</ol>
+</div>

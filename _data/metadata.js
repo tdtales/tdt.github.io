@@ -1,11 +1,18 @@
 module.exports = {
-	title: "Eleventy Base Blog v8",
+	title: "Tiny Data Tales",
 	url: "https://example.com/",
 	language: "en",
-	description: "I am writing about my experiences as a naval navel-gazer.",
+	description: "Data that entails a Tale",
 	author: {
-		name: "Your Name Here",
-		email: "youremailaddress@example.com",
+		name: "Prince Kumar",
+		email: "princekumar036@gmail.com",
 		url: "https://example.com/about-me/"
+	},
+	logo: "/img/logo.svg",
+	favicon: {
+		favicon_ico: "/img/favicon/favicon.ico",
+		favicon_svg: "",
+		favicon_png: "/img/favicon-32x32.png",
+		favicon_apple_touch_icon: "apple-touch-icon.png"
 	}
 }

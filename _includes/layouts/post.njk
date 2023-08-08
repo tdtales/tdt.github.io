@@ -4,25 +4,65 @@ layout: layouts/base.njk
 {# Only include the syntax highlighter CSS on blog posts #}
 {%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %}
 {%- css %}{% include "public/css/prism-diff.css" %}{%- endcss %}
-<h1>{{ title }}</h1>
 
-<ul class="post-metadata">
-	<li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
-	{%- for tag in tags | filterTagList %}
-	{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-	<li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
-	{%- endfor %}
-</ul>
+<h1 class="font-bold text-4xl text-center leading-snug mt-10 mb-5">{{ title }}</h1>
 
-{{ content | safe }}
+<div class="text-sm font-medium text-center">
+	<div class="mb-5 font-bold">
+		<time class="" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate("dd LLL yyyy") }}</time>
+		&middot;
+		<span>{% if author %}{{ author }}{% else %} TDT Team {% endif %}</span>
+	</div>
+	<div class="mb-10 flex flex-wrap gap-2 justify-center text-xs">
+		{%- for tag in tags | filterTagList %}
+		{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+			<a href="{{ tagUrl }}" class="post-tag bg-red-300  text-red-800 py-0.5 italic px-2 rounded">{{ tag }}</a>
+		{%- endfor %}
+	</div>
+</div>
+<img src="{{ featuredImage }}" alt="" class="w-full max-h-60 object-cover mb-10">
+<div class="prose mx-auto">{{ content | safe }}</div>
 
-{%- if collections.posts %}
-{%- set previousPost = collections.posts | getPreviousCollectionItem %}
-{%- set nextPost = collections.posts | getNextCollectionItem %}
+<hr class="mt-10 border-black">
+
+{%- if collections.blog %}
+{%- set previousPost = collections.blog | getPreviousCollectionItem %}
+{%- set nextPost = collections.blog | getNextCollectionItem %}
 {%- if nextPost or previousPost %}
-<ul class="links-nextprev">
-	{%- if previousPost %}<li>Previous: <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></li>{% endif %}
-	{%- if nextPost %}<li>Next: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></li>{% endif %}
-</ul>
+<div class="links-nextprev flex gap-5 justify-between my-10 relative">
+	{%- if previousPost %}
+		<a class="w-[30vw] text-xs" href="{{ previousPost.url }}">
+			<span>Prev Blog</span>
+			<span class="block text-sm">{{ previousPost.data.title }}</span>
+		</a>
+	{% endif %}
+	{%- if nextPost %}
+		<a class="w-[30vw] text-xs absolute right-0" href="{{ nextPost.url }}">
+			<span class="block text-right">Next Blog</span>
+			<span class="block text-sm text-right" >{{ nextPost.data.title }}</span>
+		</a>
+	{% endif %}
+</div>
+{%- endif %}
+{%- endif %}
+
+{%- if collections.tale %}
+{%- set previousPost = collections.tale | getPreviousCollectionItem %}
+{%- set nextPost = collections.tale | getNextCollectionItem %}
+{%- if nextPost or previousPost %}
+<div class="links-nextprev flex gap-5 justify-between my-10 relative">
+	{%- if previousPost %}
+		<a class="w-[30vw] text-xs" href="{{ previousPost.url }}">
+			<span>Prev Tale</span>
+			<span class="block text-sm">{{ previousPost.data.title }}</span>
+		</a>
+	{% endif %}
+	{%- if nextPost %}
+		<a class="w-[30vw] text-xs absolute right-0" href="{{ nextPost.url }}">
+			<span class="block text-right">Next Tale</span>
+			<span class="block text-sm text-right" >{{ nextPost.data.title }}</span>
+		</a>
+	{% endif %}
+</div>
 {%- endif %}
 {%- endif %}

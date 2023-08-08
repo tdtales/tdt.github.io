@@ -1,16 +1,28 @@
 ---
 layout: layouts/base.njk
 ---
-<!-- Delete this message, it will also remove the component CSS from the bundle -->
-{%- css %}{% include "public/css/message-box.css" %}{% endcss %}
-<div class="message-box">
-	<ol>
-		<li>Edit the <code>_data/metadata.js</code> with your blog’s information.</li>
-		<li>(Optional) Edit <code>eleventy.config.js</code> with your <a href="https://www.11ty.dev/docs/config/">configuration preferences</a>.</li>
-		<li>Delete this message from <code>_includes/layouts/home.njk</code>.</li>
-	</ol>
-	<p><em>This is an <a href="https://www.11ty.dev/">Eleventy project</a> created from the <a href="https://github.com/11ty/eleventy-base-blog"><code>eleventy-base-blog</code> repo</a>.</em></p>
-</div>
-<!-- Stop deleting -->
+<div class="container mx-auto px-8 min-h-[90vh] text-center grid place-content-center justify-items-center relative">
+	<img class="w-32" src="{{ metadata.logo }}" alt="{{ metadata.title }}">
+	<h1 class="font-bold text-4xl my-5">{{ metadata.title }}</h1>
+	<p class="text-2xl tracking-wide">{{ metadata.description }}</p>
 
-{{ content | safe }}
+	<a class="text-6xl font-light absolute bottom-5 text-gray-300 animate-bounce" href="#about"><span class="iconify" data-icon="mdi-chevron-down"></span></a>
+</div>
+
+<hr class="mx-5 border-gray-400">
+
+<div id="about" class="container mx-auto px-8 min-h-[90vh] text-center grid place-content-center justify-items-center">
+	<h2 class="font-bold text-4xl my-5">About</h2>
+	<p class=""><b>Tiny Data Tales</b> is an initiative of independent researchers working with data, analysing it to present stories that are backed by evidence. At Tiny Data Tales, we churn <b>complex data into simple visual forms</b> and provide short and crisp explanations of the findings. It is our commitment to <b>evidence based research</b>, that takes the shape of Tiny Data Tales.</p>
+	<br>
+	<p class="italic"><b>Note:</b> The content published in the website, represent the views of the authors and not the organisations they are part of.</p>
+	<br>
+	<div class="flex gap-3 text-xl">
+		<a href="mailto:tinydatatales@gmail.com"><span class="iconify text-[#f2a60c]" data-icon="mdi-email"></span></a>
+		<a href="https://twitter.com/tinydatatales"><span class="iconify text-[#1A8CD8]" data-icon="mdi-twitter"></span></a>
+		<a href="https://www.instagram.com/tinydatatales/"><span class="iconify text-[#FF3040]" data-icon="mdi-instagram"></span></a>
+		<a href="https://github.com/tinydatatales"><span class="iconify text-[#010409]" data-icon="mdi-github"></span></a>
+	</div>
+</div>
+
+{# {{ content | safe }} #}
