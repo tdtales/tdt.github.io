@@ -20,20 +20,21 @@ eleventyNavigation:
   </div>
 
   <h4 class="font-medium text-md text-center mb-2">Send us a message</h4>
-  <form action="" class="bg-red">
+  <form name="Contact Form" method="POST" action="success" data-netlify="true" onSubmite="submit" data-netlify-honeypot="bot-field">
+    <input name="bot-field" hidden>
     <div class="mb-6">
       <label for="name" class="block text-sm font-medium mb-2">Name <span class="text-red-500">*</span></label>
-      <input type="text" name="name" id="name" placeholder="Name" class="bg-transparent block w-full border border-gray-300 p-2 text-sm rounded">
+      <input type="text" name="Name" id="name" placeholder="Name" class="bg-transparent block w-full border border-gray-300 p-2 text-sm rounded">
     </div>
   
     <div class="mb-6">
       <label for="email" class="block text-sm font-medium mb-2">Email <span class="text-red-500">*</span></label>
-      <input type="email" name="email" id="email" placeholder="Email" class="bg-transparent block w-full border border-gray-300 p-2 text-sm rounded">
+      <input type="email" name="Email" id="email" placeholder="Email" class="bg-transparent block w-full border border-gray-300 p-2 text-sm rounded">
     </div>
   
     <div class="mb-6">
       <label for="message" class="block text-sm font-medium mb-2">Message <span class="text-red-500">*</span></label>
-      <textarea name="message" id="message" placeholder="Message" rows="6" class="bg-transparent block w-full border border-gray-300 p-2 text-sm rounded"></textarea>
+      <textarea name="Message" id="message" placeholder="Message" rows="6" class="bg-transparent block w-full border border-gray-300 p-2 text-sm rounded"></textarea>
     </div>
   
     <button type="submit" class="block w-full bg-blue-700 text-white py-2 rounded-md font-medium hover:bg-blue-800">Send</button>

@@ -3,7 +3,7 @@
 {% for post in postslist | reverse %}
   <div class="group rounded-xl overflow-hidden flex items-center gap-2 md:flex-col md:items-start">
     <a href="{{ post.url }}" class="block flex-shrink-0 overflow-hidden rounded-r-xl h-full w-32 md:w-full md:h-60">
-      <img class="w-full h-full object-cover group-hover:scale-110 duration-300 ease-in-out" src="{{ post.data.featuredImage }}" alt="">
+      <img class="w-full h-full object-cover group-hover:scale-110 duration-300 ease-in-out" src="{{ post.data.featuredImage or '/img/blog.jpg' }}" alt="">
     </a>
     <div class="p-2 md:p-4">
       <h3 class="font-bold text w-full ">
