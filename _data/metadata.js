@@ -2,7 +2,7 @@ module.exports = {
 	title: "Tiny Data Tales",
 	url: "https://tinydatatales.com/",
 	language: "en",
-	description: "Data that entails a Tale",
+	description: "At Tiny Data Tales, we churn complex data into simple visual forms and provide short and crisp explanations of the findings. It is our commitment to evidence based research, that takes the shape of Tiny Data Tales.",
 	author: {
 		name: "Prince Kumar",
 		email: "princekumar036@gmail.com",
