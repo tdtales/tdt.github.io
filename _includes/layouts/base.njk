@@ -7,9 +7,11 @@
 		<meta name="description" content="{{ description or metadata.description }}">
 
 		{# OPEN GRAPH #}
+		<meta property="og:site_name" content="{{ metadata.title }}">
 		<meta property="og:title" content="{{ title or metadata.title }}">
 		<meta property="og:type" content="{% if title %}{{ article }}{% else %}{{ metadata.title }}{% endif %}">  {# should be "{{ article or website }}" #}
-		<meta property="og:image" content="{{ featuredImage or metadata.defaultImage }}">
+		<meta property="og:image" itemprop="image" content="{{ featuredImage or metadata.defaultImage }}">
+		<meta property="og:image:secure_url" content="{{ featuredImage or metadata.defaultImage }}">
 		<meta property="og:url" content="{{ page.url | htmlBaseUrl }}">
 
 		{#- Atom and JSON feeds included by default #}
