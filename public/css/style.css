@@ -18,6 +18,10 @@ body {
 	width: 1px;
 }
 
+nav li.active {
+	color: blueviolet; 
+}
+
 .header-anchor {
 	display: none;
 }
