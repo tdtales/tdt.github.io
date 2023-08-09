@@ -1,5 +1,6 @@
 ---
 layout: layouts/base.njk
+title: Contact
 eleventyNavigation:
   key: Contributors
   order: 3

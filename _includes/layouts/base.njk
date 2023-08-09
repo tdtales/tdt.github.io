@@ -3,8 +3,14 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>{% if title %}{{ title }} | {{ metadata.title }}{% else %}{{ metadata.title }}{% endif %}</title>
+		<title>{% if title %}{{ title +' | '+ metadata.title }}{% else %}{{ metadata.title }}{% endif %}</title> 
 		<meta name="description" content="{{ description or metadata.description }}">
+
+		{# OPEN GRAPH #}
+		<meta property="og:title" content="{{ title or metadata.title }}">
+		<meta property="og:type" content="{% if title %}{{ article }}{% else %}{{ metadata.title }}{% endif %}">  {# should be "{{ article or website }}" #}
+		<meta property="og:image" content="{{ featuredImage or metadata.defaultImage }}">
+		<meta property="og:url" content="{{ page.url | htmlBaseUrl }}">
 
 		{#- Atom and JSON feeds included by default #}
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
@@ -14,22 +20,10 @@
 		<link rel="stylesheet" href="/css/twstyles.css">
 		{%- css %}{% include "public/css/style.css" %}{% endcss %}
 		<style>{% getBundle "css" %}</style>
-		<style>
-			@import url('https://fonts.googleapis.com/css2?family=Forum&family=Poppins:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;700&display=swap');
-			body {
-				font-family: 'Poppins', sans-serif;
-			}
-			.header-anchor {
-				display: none;
-			}
-		</style>
 
 		<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 		{%- js %}{% include "public/js/script.js" %}{% endjs %}
 		<script>{% getBundle "js" %}</script>
-
-		<script src="https://cdn.tailwindcss.com"></script>
-		
 
 		<link rel="shortcut icon" type="image/x-icon" href="{{ metadata.favicon.favicon_ico }}">
 		<link rel="icon" type="image/svg+xml" href="{{ metadata.favicon.favicon_svg }}">
@@ -43,7 +37,7 @@
 		<header class="bg-gray-300 relative">
 			<div class="container mx-auto px-10 max-w-screen-lg  flex items-center justify-between py-2 md:py-0">
 				<a href="/" class="home-link w-12"><img src="{{ metadata.logo }}" alt="{{ metadata.title }}" ></a>
-				<button class="mobile-nav-btn md:hidden">
+				<button class="mobile-nav-btn md:hidden" type="button" title="nav menu">
 					<span class="iconify text-xl nav-show" data-icon="mdi-dots-vertical"></span>
 					<span class="iconify text-xl nav-close hidden" data-icon="mdi-close"></span>
 				</button>
@@ -63,7 +57,5 @@
 		</main>
 
 		<footer class="text-center p-2 bg-gray-300">Copyright <a class="font-bold hover:underline" href="/">{{ metadata.title }}</a> &copy; 2023.</footer>
-
-		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
 	</body>
 </html>

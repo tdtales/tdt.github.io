@@ -1,5 +1,6 @@
 ---
 layout: layouts/base.njk
+title: Contact
 eleventyNavigation:
   key: Contact
   order: 4
@@ -13,10 +14,10 @@ eleventyNavigation:
 <div id="maincontent" class="max-w-[30rem] mx-auto">
   <h4 class="font-medium text-md text-center mb-2">Find us on Social Media</h4>
   <div class="flex justify-center gap-3 text-xl mb-20">
-      <a href="mailto:tinydatatales@gmail.com"><span class="iconify text-[#f2a60c]" data-icon="mdi-email"></span></a>
-      <a href="https://twitter.com/tinydatatales"><span class="iconify text-[#1A8CD8]" data-icon="mdi-twitter"></span></a>
-      <a href="https://www.instagram.com/tinydatatales/"><span class="iconify text-[#FF3040]" data-icon="mdi-instagram"></span></a>
-      <a href="https://github.com/tinydatatales"><span class="iconify text-[#010409]" data-icon="mdi-github"></span></a>
+      <a href="mailto:tinydatatales@gmail.com" title="mail"><span class="iconify text-[#f2a60c]" data-icon="mdi-email"></span></a>
+		<a href="https://twitter.com/tinydatatales" title="twitter"><span class="iconify text-[#1A8CD8]" data-icon="mdi-twitter"></span></a>
+		<a href="https://www.instagram.com/tinydatatales/" title="instagram"><span class="iconify text-[#FF3040]" data-icon="mdi-instagram"></span></a>
+		<a href="https://github.com/tinydatatales" title="github"><span class="iconify text-[#010409]" data-icon="mdi-github"></span></a>
   </div>
 
   <h4 class="font-medium text-md text-center mb-2">Send us a message</h4>

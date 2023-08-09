@@ -1,12 +1,12 @@
 module.exports = {
 	title: "Tiny Data Tales",
-	url: "https://example.com/",
+	url: "https://tinydatatales.com/",
 	language: "en",
 	description: "Data that entails a Tale",
 	author: {
 		name: "Prince Kumar",
 		email: "princekumar036@gmail.com",
-		url: "https://example.com/about-me/"
+		url: ""
 	},
 	logo: "/img/logo.svg",
 	favicon: {
@@ -14,5 +14,6 @@ module.exports = {
 		favicon_svg: "",
 		favicon_png: "/img/favicon-32x32.png",
 		favicon_apple_touch_icon: "apple-touch-icon.png"
-	}
+	},
+    defaultImage: "/img/featured.jpg"
 }
